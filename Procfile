@@ -1,0 +1,1 @@
+web: gunicorn run:app -e FLASK_CONFIGURATION=deployment
