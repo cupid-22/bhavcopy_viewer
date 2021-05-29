@@ -49,7 +49,6 @@ INSTALLED_APPS = [
 
     # file based middlewares
     'bhavcopy.app.import_handler.config.ImportHandlerConfig',
-    'bhavcopy.app.standard_util.config.StandardConfig',
 ]
 
 MIDDLEWARE = [
@@ -96,10 +95,11 @@ WSGI_APPLICATION = 'bhavcopy.wsgi.application'
 CACHES = {
     "default": {
         "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": "redis-12712.c84.us-east-1-2.ec2.cloud.redislabs.com:12712",
+        "LOCATION": "redis://redis-12712.c84.us-east-1-2.ec2.cloud.redislabs.com:12712",
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
-            "PASSWORD": "UvxDtojtPWKbueWW6v0QahrkkNFBO3Fz"
+            "PASSWORD": "UvxDtojtPWKbueWW6v0QahrkkNFBO3Fz",
+            "DEFAULT_TIMEOUT": "5000000"
         }
     }
 }
@@ -162,5 +162,3 @@ REST_FRAMEWORK = {
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
-
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
