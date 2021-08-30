@@ -29,10 +29,10 @@ class CacheRouter:
         """All cache write operations go to primary"""
         return self.connection.set(key, value)
 
-    def create_many(self, key_array: dict) -> dict:
+    def create_many(self, key_dict: dict) -> dict:
         """All cache write operations go to primary"""
-        return self.connection.set_many(key_array)
+        return self.connection.set_many(key_dict)
 
-    def find_many(self, key_array: list) -> dict:
+    def find_many(self, key_dict: list) -> dict:
         """All cache write operations go to primary"""
-        return self.connection.get_many(key_array)
+        return self.connection.get_many(key_dict)

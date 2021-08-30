@@ -160,5 +160,19 @@ REST_FRAMEWORK = {
     'PAGE_SIZE': 500
 }
 
-# Default primary key field type
-# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
+DEFAULT_HEADERS = {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.76 Safari/537.36'
+}
+
+# columns = ['code', 'name', 'open', 'close', 'high', 'low']
+CSV_HEAD_CONVERSION = {
+    'SC_CODE': 'CODE',
+    'SC_NAME': 'NAME',
+    'OPEN': 'OPEN',
+    'HIGH': 'HIGH',
+    'LOW': 'LOW',
+    'CLOSE': 'CLOSE'
+}
+
+TO_CSV_FLAG = True
+CLI_MODE = False
